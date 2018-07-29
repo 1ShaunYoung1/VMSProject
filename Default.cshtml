@@ -1,0 +1,25 @@
+﻿@{
+    Layout = "~/_SiteLayout.cshtml";
+    Page.Title = "VMS: Administrative Portal";
+}
+
+@section featured {
+<section class="featured">
+    <div class="content-wrapper">
+        <hgroup class="title">
+            <h1>@Page.Title.</h1>
+    
+        </hgroup>
+        <p>
+            <h2>Welcome to the Volunteer management system!</h2>
+            <br />
+            This site is for Administrators only! As volunteer opportunities are ever-changing and locations vary by region please contact our 
+            volunteer opportunity organizers to find opportunities near you!
+            <br />
+            <a href="~/Contact">CLICK HERE!</a> to be directed to our central processing center for volunteer opportunities.
+            <br />
+            Admins please log in <a href="~/Account/Login">HERE!</a>
+        </p>
+    </div>
+</section>
+}
