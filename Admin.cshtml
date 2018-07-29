@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "~/_SiteLayout.cshtml";
+    Page.Title = "Volunteer Management System";
+}
+@{
+    var db = Database.Open("VMS");
+    var query = "SELECT * FROM Product";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@Page.Title.</h1>
+
+            </hgroup>
+            <p>
+                <h2>Welcome to the Volunteer management system!</h2>
+                <br />
+                <h1>Volunteer Management System</h1>
+                <table border="1" width="100%">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Skills</th>
+                        <th>Volunteer Opportunity</th>
+                    </tr>
+                    @foreach (var row in db.Query(query))
+                    {
+                        <tr>
+                            <td>@row.Id</td>
+                            <td>@row.Name</td>
+                            <td>@row.Description</td>
+                            <td style="text-align:right">@row.Price</td>
+                        </tr>
+                    }
+                </table>
+            </p>
+        </div>
+    </section>
+}
